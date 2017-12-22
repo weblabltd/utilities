@@ -196,12 +196,6 @@ class PrioritizedObjectListTest extends TestCase
         $subject = new \stdClass();
 
         return [
-            [array(), null, 'Expects an an object, got'],
-            [34, null, 'Expects an an object, got'],
-            ['lorem ipsum', null, 'Expects an an object, got'],
-            [null, null, 'Expects an an object, got'],
-            [true, null, 'Expects an an object, got'],
-
             [$subject, -12, 'The priority should be a positive integer or null'],
         ];
     }

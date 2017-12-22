@@ -44,14 +44,8 @@ class PrioritizedObjectList implements \Countable, \Iterator
      *
      * @return PrioritizedObjectList
      */
-    public function add($object, ?int $priority = self::DEFAULT_PRIORITY): PrioritizedObjectList
+    public function add(object $object, ?int $priority = self::DEFAULT_PRIORITY): PrioritizedObjectList
     {
-        if (!is_object($object)) {
-            throw new \InvalidArgumentException(
-                sprintf('Expects an an object, got "%s" instead', gettype($object))
-            );
-        }
-
         if ($priority < 0) {
             throw new \InvalidArgumentException(
                 sprintf('The priority should be a positive integer or null for the default priority, got %s instead', gettype($priority))

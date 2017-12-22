@@ -13,7 +13,7 @@ build:
         redis: false
 
         php:
-            version: "7.1.12 "
+            version: "7.2.0"
             ini:
                 memory_limit:     "-1"
 
