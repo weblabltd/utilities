@@ -1,0 +1,32 @@
+{
+    "name": "weblabltd/utilities",
+    "description": "Collection of small utility classes",
+    "type": "library",
+    "homepage": "https://github.com/weblabltd/utilities",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexander Marinov",
+            "email": "alex@pismo.li"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Weblabltd\\Component\\Util\\": "src/"
+        },
+        "exclude-from-classmap": [
+            "/tests/"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Weblabltd\\Component\\Util\\Tests\\": "tests/"
+        }
+    }
+}

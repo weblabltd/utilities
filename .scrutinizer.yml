@@ -1,0 +1,31 @@
+filter:
+    paths:
+        - 'src/*'
+
+build:
+    environment:
+        timezone: UTC
+
+        node: false
+        postgresql: false
+        rabbitmq: false
+        mysql: false
+        redis: false
+
+        php:
+            version: "7.1.12 "
+            ini:
+                memory_limit:     "-1"
+
+    tests:
+        override:
+            -
+                command: 'vendor/bin/phpunit --coverage-clover=code-coverage'
+                coverage:
+                    file: 'code-coverage'
+                    format: 'clover'
+
+build_failure_conditions:
+    - 'operations.rating(<= D).new.exists'
+    - 'classes.rating(<= C).new.exists'
+    - 'issues.severity(>= CRITICAL).new.exists'
